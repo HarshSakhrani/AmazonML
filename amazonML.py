@@ -235,7 +235,7 @@ def train_model(model,epochs):
 
   return model,avgTrainLoss,avgTrainAcc
 
-model,avgTrainLoss,avgTrainAcc = train_model(bertOnly,3)
+model,avgTrainLoss,avgTrainAcc = train_model(bertOnly,2)
 
 
 def checkClassificationMetrics(loader,model):
