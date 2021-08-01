@@ -30,8 +30,8 @@ import csv
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-dfTrain = pd.read_csv("/content/drive/MyDrive/combined.csv", index_col=None)
-dfTest=pd.read_csv("/content/drive/MyDrive/test.csv",escapechar = "\\",quoting = csv.QUOTE_NONE)
+dfTrain = pd.read_csv("/root/combined.csv", index_col=None)
+dfTest=pd.read_csv("/root/test.csv",escapechar = "\\",quoting = csv.QUOTE_NONE)
 
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing
@@ -181,8 +181,8 @@ def train_model(model,epochs):
         print("Targets:-",targets)
         print("Predictions:-",predictions)
 
-	print("Epoch:",i)
-	print("Batch:",batch_idx)
+        print("Epoch:",i)
+        print("Batch:",batch_idx)
         print('Loss: {}  Accuracy: {} %'.format(loss.data, acc))
 	
 
@@ -235,7 +235,7 @@ def train_model(model,epochs):
 
   return model,avgTrainLoss,avgTrainAcc
 
-model,avgTrainLoss,avgTrainAcc = train_model(bertOnly,2)
+bertOnly,avgTrainLoss,avgTrainAcc = train_model(bertOnly,3)
 
 
 def checkClassificationMetrics(loader,model):
